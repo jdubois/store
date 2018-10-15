@@ -21,7 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(ProductService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new Product(0, 'AAAAAAA', 'AAAAAAA', 0, Size.S, 'AAAAAAA');
+            elemDefault = new Product(0, 'AAAAAAA', 'AAAAAAA', 0, Size.S, 'image/png', 'AAAAAAA');
         });
 
         describe('Service methods', async () => {
@@ -87,10 +87,7 @@ describe('Service Tests', () => {
                 const expected = Object.assign({}, returnedFromService);
                 service
                     .query(expected)
-                    .pipe(
-                        take(1),
-                        map(resp => resp.body)
-                    )
+                    .pipe(take(1), map(resp => resp.body))
                     .subscribe(body => expect(body).toContainEqual(expected));
                 const req = httpMock.expectOne({ method: 'GET' });
                 req.flush(JSON.stringify([returnedFromService]));

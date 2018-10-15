@@ -14,7 +14,7 @@ type EntityArrayResponseType = HttpResponse<IProductOrder[]>;
 
 @Injectable({ providedIn: 'root' })
 export class ProductOrderService {
-    private resourceUrl = SERVER_API_URL + 'crm/api/product-orders';
+    public resourceUrl = SERVER_API_URL + 'crm/api/product-orders';
 
     constructor(private http: HttpClient) {}
 
