@@ -2,8 +2,6 @@ package io.github.jhipster.application.security.jwt;
 
 import io.github.jhipster.application.security.AuthoritiesConstants;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import java.security.Key;
 import java.util.*;
 
